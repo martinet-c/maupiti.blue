@@ -47,11 +47,12 @@ On en profite aussi pour planifier un reboot une fois par semaine (le lundi à 4
 * sudo apt-get update
 * sudo apt-get upgrade
 * sudo apt install git
-* cd /home/pi/
-* git clone https://github.com/martinet-c/gemini
+* mkdir /home/pi/gemini
+* cd /home/pi/gemini
+* git clone https://github.com/martinet-c/maupiti.blue
 * crontab -e
 ```
-55 * * * * cd /home/pi/gemini && git reset --hard HEAD && git pull && chmod -R +x maupiti.blue/cgi
+55 * * * * cd /home/pi/gemini/maupiti.blue && git reset --hard HEAD && git pull && chmod -R +x cgi
 0 4 * * 1 sudo reboot
 ```
 
