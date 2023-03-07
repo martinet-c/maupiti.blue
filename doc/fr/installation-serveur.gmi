@@ -1,0 +1,216 @@
+# Installation d'un serveur Gemini sur Raspberry Pi
+
+Cette documentation est surtout pensée égoïstement pour moi, afin que je puisse si besoin réinstaller facilement mon serveur.
+Mais si jamais elle peut aussi vous être utile j'en serai ravi !
+
+
+## Installation de l'OS
+
+* Prérequis : un Raspberry Pi 4 (2Go), un autre PC Windows ou Linux, une carte Micro SD montée sur le PC
+* Sur le PC, via le Raspberry Pi Imager, choisir l'OS Raspberry Pi OS Lite (64-bit), la carte SD, et les paramètres suivants :
+(Set hostname: raspberrypi.local)
+Enable SSH: use password authentification
+Set username and pasword: pi / [password]
+Configure wireless LAN: SSID: [nom du réseau Wifi] / [clé WPA] / Country: FR
+Set local settings: Europe/Paris / fr
+* Lancer l'écriture de la carte SD
+* Une fois l'écriture terminée et la carte SD éjectée, insérer la carte dans le Raspberry Pi
+* Vérifier que tout est OK, notamment l'accès Internet depuis le Raspberry Pi et l'accès SSH au Raspberry Pi depuis le PC.
+
+
+## Configuration de la box Internet
+
+* Sur le Raspberry Pi, effectuer un ifconfig pour récupérer l'adresse IP et l'adresse MAC
+* Espace abonné Free > Ma Freebox > Configurer mon routeur Freebox > Redirection de ports :
+* ajouter 80 TCP [adresse IP] 80 (port HTTP, pas nécessaire pour Gemini)
+* ajouter 443 TCP [adresse IP] 443 (port HTTPS, pas nécessaire pour Gemini)
+* ajouter 1965 TCP [adresse IP] 1965 (le seul port nécessaire pour Gemini)
+* Espace abonné Free > Ma Freebox > Configurer mon routeur Freebox > Baux DHCP permanents :
+* ajouter [adresse IP] [adresse MAC].
+* Espace abonné Free > Ma Freebox > Demander une adresse IP fixe V4 full-stack
+* Espace abonné Free > Ma Freebox > Personnaliser mon reverse DNS
+* ajouter maupiti.blue
+
+
+## Configuration du nom de domaine
+
+* Espace abonné Free > Ma Freebox > Afficher mon adresse IP : permet d'obtenir l'adresse IP publique
+* Panneau de contrôle OVH : modifier l'enregistrement type A du domaine maupiti.blue pour le faire pointer vers l'adresse IP publique
+* Attendre attente du temps de propagation de la modification DNS
+
+
+## Mise en place du contenu Gemini
+
+L'objectif est que le contenu Gemini soit alimenté automatiquement via pull Github planifié une fois par heure.
+On en profite aussi pour planifier un reboot une fois par semaine (le lundi à 4h du matin).
+
+* sudo apt-get update
+* sudo apt-get upgrade
+* sudo apt install git
+* cd /home/pi/
+* git clone https://github.com/martinet-c/gemini
+* crontab -e
+```
+55 * * * * cd /home/pi/gemini && git reset --hard HEAD && git pull && chmod -R +x maupiti.blue/cgi
+0 4 * * 1 sudo reboot
+```
+
+
+## Installation du serveur Web
+
+NB : Il n'est pas nécessaire d'installer un serveur Web pour héberger du contenu Gemini, mais c'est utile notamment pour l'obtention d'un certificat Let's Encrypt.
+
+=> https://raspberrytips.fr/nginx-sur-raspberry-pi/ référence
+
+* sudo apt install nginx
+* sudo cp /home/pi/gemini/maupiti.blue/index.html /var/www/html
+* http://maupiti.blue/ pour vérifier si c'est OK
+
+
+## Obtention d'un certficat
+
+=> https://robertopozzi.medium.com/have-fun-with-your-raspberry-pi-secure-your-application-with-self-signed-certificates-c8ef455a492f référence pour la création d'un certificat auto-signé, mais ce type de certificat n'est pas accepté par Gemserv
+=> https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=265800 référence du problème Gemserv rencontré avec un certificat auto-signé
+=> https://letsencrypt.org/fr/getting-started/ référence pour obtenir un certificat Let's Encrypt
+=> https://github.com/srvrco/getssl le client Let's Encrypt que j'ai choisi
+
+* mkdir /home/pi/.getssl
+* cd /home/pi/.getssl
+* curl --silent https://raw.githubusercontent.com/srvrco/getssl/latest/getssl > getssl ; chmod 700 getssl
+* ./getssl -u
+* ./getssl -c maupiti.blue
+* nano /home/pi/.getssl/maupiti.blue/getssl.cfg
+```
+CA="https://acme-v02.api.letsencrypt.org"
+...
+#SANS="www.maupiti.blue"
+...
+ACL=('/var/www/html/.well-known/acme-challenge')
+```
+* sudo chmod 777 /var/www/html
+* ./getssl maupiti.blue
+* nano maupiti.blue/maupiti.blue.key
+* enlever "RSA" :
+```
+-----BEGIN PRIVATE KEY-----
+...
+-----END PRIVATE KEY-----
+```
+
+
+## Installation et configuration du serveur Gemini
+
+J'ai essayé plusieurs serveurs Gemini :
+=> gemini://qwertqwefsday.eu/agate.gmi Agate ; très bien mais sans support des CGI, dont j'ai besoin.
+=> https://tildegit.org/solderpunk/molly-brown (The Unsinkable) Molly Brown ; j'ai pas réussi à le compiler :(
+=> https://sr.ht/~int80h/gemserv Gemserv ; en cours...
+
+### Agate
+
+=> https://www.makeuseof.com/build-a-gemini-server-linux/ référence
+
+* mkdir /home/pi/gemini-server
+* cd /home/pi/gemini-server
+* mkdir agate-v3.2.4-linux-aarch64
+* cd agate-v3.2.4-linux-aarch64
+* wget https://github.com/mbrubeck/agate/releases/download/v3.2.4%2Bbuild/agate.aarch64-unknown-linux-gnu.gz
+* gunzip agate.aarch64-unknown-linux-gnu.gz
+* mv agate.aarch64-unknown-linux-gnu agate
+* sudo chmod +x agate
+* crontab -e
+```
+@reboot /home/pi/gemini-server/agate-v3.2.4-linux-aarch64/agate --content /home/pi/gemini/maupiti.blue/ --addr [::]:1965 --hostname maupiti.blue --lang fr-FR
+```
+
+### Gemserv
+
+* cd /home/pi/gemini-server
+* wget http://charlock.free.fr/gemini/gemserv-v0.6.6-linux-aarch64.tar.gz
+* tar -xf gemserv-v0.6.6-linux-aarch64.tar.gz
+* rm gemserv-v0.6.6-linux-aarch64.tar.gz
+* nano gemserv-v0.6.6-linux-aarch64/config.toml
+```
+# interface accepts multiple interface/port combinations. However, due to the
+# dual stack nature of linux if you specify "[::]:1965" linux will also listen
+# on "0.0.0.0:1965" so if you manually specify both it will fail.
+# interface = [ "0.0.0.0:1965, "[::]:1965" ]
+interface = [ "[::]:1965" ]
+# port and host have been deprecated in favor of interface but will still work
+# for now.
+# port = 1965
+# host = "::"
+# log is optional and server wide. It defaults to info if not set. Other levels
+# are error, warn, and info. If error is set it will only show error. If warn
+# is set it will show error and warn. Info shows all three.
+log = "info"
+
+# There must be at least 1 server tag if a client doesn't send sni the server
+# will use this tag as its default.
+# Server 1
+[[server]]
+hostname = "maupiti.blue"
+dir = "/home/pi/gemini/maupiti.blue"
+key = "/home/pi/.getssl/maupiti.blue/maupiti.blue.key"
+cert = "/home/pi/.getssl/maupiti.blue/maupiti.blue.crt"
+# index is optional but defaults to index.gemini. The server will serve files
+# ending in gemini or gmi.
+index = "index.gmi"
+# lang is optional
+#lang = "en"
+# cgi is optional bool
+cgi = true
+# cgipath is optional and only checked if cgi is true. It restricts cgi to only
+# this directory.
+cgipath = "/home/pi/gemini/maupiti.blue/cgi/"
+# scgi is optional
+#scgi = { "/scgi" = "localhost:4000" }
+# cgienv is optional
+#cgienv = { "GIT_PROJECT_ROOT" = "/srv/git" }
+# usrdir is optional. it'll look in each user's ~/public_gemini
+#usrdir = true
+# proxy is optional
+# path is what comes after the hostname e.g. example.com/path
+#proxy = { path = "localhost:1966" }
+# proxy_all is optional
+# It will send all requests to the specified server. It also supports streamming.
+#proxy_all = "localhost:1967"
+# redirect is optional
+#redirect = { "/redirect" = "/", "/newdomain" = "gemini://example.net" }
+
+# Server 2
+#[[server]]
+#hostname = "example.net"
+#dir = "/path/to/serv/"
+#key = "/path/to/key"
+#cert = "/path/to/cert"
+```
+* crontab -e
+```
+@reboot cd /home/pi/gemini-server/gemserv-v0.6.6-linux-aarch64 && ./gemserv config.toml
+```
+
+
+## Compilation de Gemserv (one shot)
+
+=> https://linuxhint.com/install-rust-raspberry-pi/ référence
+
+* curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+* (choisir le mode installation par défaut)
+* source "$HOME/.cargo/env"
+* cargo --version
+* cd /home/pi/gemini-server
+* git clone https://git.sr.ht/~int80h/gemserv
+* cd gemserv
+* cargo build --release
+* mkdir /home/pi/gemini-server/gemserv-v0.6.6-linux-aarch64
+* cd /home/pi/gemini-server/gemserv-v0.6.6-linux-aarch64
+* cp /home/pi/gemini-server/gemserv/target/release/gemserv .
+* cp /home/pi/gemini-server/gemserv/config.toml config-default.toml
+* cd /home/pi/gemini-server/
+* tar -zcvf gemserv-v0.6.6-linux-aarch64.tar.gz gemserv-v0.6.6-linux-aarch64/
+=> http://charlock.free.fr/gemini/gemserv-v0.6.6-linux-aarch64.tar.gz
+
+
+## Lien divers
+
+=> https://pimylifeup.com/raspberry-pi-remote-desktop/ Installing the Remote Desktop Server on the Raspberry Pi (pour usage futur)
