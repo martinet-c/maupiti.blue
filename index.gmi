@@ -23,6 +23,7 @@
 => log.gmi Captain's log
 
 Main content:
+=> hey/  Hey!
 => cgi/alone.py Alone
 
 Documentation:
