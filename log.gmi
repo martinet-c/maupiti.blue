@@ -1,8 +1,6 @@
 * 2023-03-05: Gemserv up and running on my Raspberry Pi. Raising the anchor from the Web and setting sail for the Geminispace.
 => doc/fr/installation-serveur.gmi (French) Documentation d'installation du serveur
 
-* 2023-03-11: "Alone", my first ever Python script, a very simple piece of dynamic ASCII art:
-=> cgi/alone.py Alone
-
-* 2023-03-11: The first 3 episodes of "Hey!", an ASCII art saga I made 10 years ago on my previous website. It fits perfectly for Gemini:
-=> hey/
+* 2023-03-11:
+=> cgi/alone.py "Alone", my first ever Python script, a very simple piece of dynamic ASCII art
+=> hey/ The first 3 episodes of "Hey!", an ASCII art saga I made 10 years ago on my previous website. It fits perfectly for Gemini!
