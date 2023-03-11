@@ -8,10 +8,10 @@ for y in range(h):
     for x in range(w):
         matrix[y][x] = ' '
 
-from random import randint
 nb = 100
 coord = []
 coord.append([int(w/2), int(h/2)-1])
+from random import randint
 for i in range(nb):
     coord.append([randint(0, w-1), randint(-2, h-1)])
 coord.sort(key=lambda x: x[1]) # sort on column 1, see https://stackoverflow.com/questions/20183069/how-to-sort-multidimensional-array-by-column
