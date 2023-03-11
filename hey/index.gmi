@@ -1,6 +1,6 @@
 # Hey!
 
-## an ASCII art click-motion animation saga!
+## > an ASCII art click-motion animation saga!
 
 => ep1/hey1-01.gmi ep1: hey!
 => ep2/hey2-01.gmi ep2: heeeyyy!!!
