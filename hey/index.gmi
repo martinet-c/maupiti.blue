@@ -5,8 +5,8 @@
 => ep1/hey1-01.gmi ep1: hey!
 => ep2/hey2-01.gmi ep2: heeeyyy!!!
 => ep3/hey3-01.gmi ep3: hey???
-=> ep4/hey4-01.gmi ep4: heu... COMING SOON
-=> ep5/hey5-01.gmi ep5: heeeeeeeeeey COMING SOON
+=> ep4/hey4-01.gmi ep4: heu...
+=> ep5/hey5-01.gmi ep5: heeeeeeeeeey
 => ep6/cut-01/hey6-01-01.gmi ep6: I have a hey! COMING SOON
 
 ```
