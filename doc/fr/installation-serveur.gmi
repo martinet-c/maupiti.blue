@@ -96,6 +96,10 @@ ACL=('/var/www/html/.well-known/acme-challenge')
 ...
 -----END PRIVATE KEY-----
 ```
+* crontab -e
+```
+0 3 * * * /home/pi/.getssl/getssl -u maupiti.blue
+```
 
 
 ## Installation et configuration du serveur Gemini
@@ -103,7 +107,7 @@ ACL=('/var/www/html/.well-known/acme-challenge')
 J'ai essayé plusieurs serveurs Gemini :
 => gemini://qwertqwefsday.eu/agate.gmi Agate ; très bien mais sans support des CGI, dont j'ai besoin.
 => https://tildegit.org/solderpunk/molly-brown (The Unsinkable) Molly Brown ; j'ai pas réussi à le compiler :(
-=> https://sr.ht/~int80h/gemserv Gemserv ; en cours...
+=> https://sr.ht/~int80h/gemserv Gemserv ; installé avec succès (et un peu de sueur), validé !
 
 ### Agate
 
