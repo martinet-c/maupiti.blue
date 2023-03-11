@@ -22,6 +22,8 @@
 ```
 => log.gmi Captain's log
 
+Main content:
+=> cgi/alone.py Alone
 
 Documentation:
 => doc/fr/installation-serveur.gmi (French) Documentation d'installation du serveur

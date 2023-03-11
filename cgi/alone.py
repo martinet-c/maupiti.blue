@@ -31,4 +31,6 @@ for y in range(h):
     print(''.join(matrix[y]))
 print('```')
 
+print('=> alone.py Still alone')
+print('')
 util.footer_en()
