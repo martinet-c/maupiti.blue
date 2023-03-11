@@ -1,0 +1,17 @@
+# Hey! an ASCII art click-motion animation saga
+```
+###### the "hey!" saga ######
+#                           #
+```
+=> ep1 ep1: hey!
+=> ep2 ep2: heeeyyy!!!
+=> ep3 ep3: hey???
+=> ep4 ep4: heu...
+=> ep5 ep5: heeeeeeeeeey
+=> ep6 ep6: I have a hey!
+```
+#                      --   #
+#                     <- <  #
+### by charlock ###### dd ###
+```
+=> /index.gmi Back to home page
