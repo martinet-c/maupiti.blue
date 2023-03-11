@@ -8,10 +8,10 @@ Mais si jamais elle peut aussi vous être utile j'en serai ravi !
 
 * Prérequis : un Raspberry Pi 4 (2Go), un autre PC Windows ou Linux, une carte Micro SD montée sur le PC
 * Sur le PC, via le Raspberry Pi Imager, choisir l'OS Raspberry Pi OS Lite (64-bit), la carte SD, et les paramètres suivants :
-Enable SSH: use password authentification
-Set username and pasword: pi / [password]
-Configure wireless LAN: SSID: [nom du réseau Wifi] / [clé WPA] / Country: FR
-Set local settings: Europe/Paris / fr
+* > Enable SSH: use password authentification
+* > Set username and pasword: pi / [password]
+* > Configure wireless LAN: SSID: [nom du réseau Wifi] / [clé WPA] / Country: FR
+* > Set local settings: Europe/Paris / fr
 * Lancer l'écriture de la carte SD
 * Une fois l'écriture terminée et la carte SD éjectée, insérer la carte dans le Raspberry Pi
 * Vérifier que tout est OK, notamment l'accès Internet depuis le Raspberry Pi et l'accès SSH au Raspberry Pi depuis le PC.
@@ -21,14 +21,14 @@ Set local settings: Europe/Paris / fr
 
 * Sur le Raspberry Pi, effectuer un ifconfig pour récupérer l'adresse IP et l'adresse MAC
 * Espace abonné Free > Ma Freebox > Configurer mon routeur Freebox > Redirection de ports :
-* ajouter 80 TCP [adresse IP] 80 (port HTTP, pas nécessaire pour Gemini)
-* ajouter 443 TCP [adresse IP] 443 (port HTTPS, pas nécessaire pour Gemini)
-* ajouter 1965 TCP [adresse IP] 1965 (le seul port nécessaire pour Gemini)
+* > ajouter 80 TCP [adresse IP] 80 (port HTTP, pas nécessaire pour Gemini)
+* > ajouter 443 TCP [adresse IP] 443 (port HTTPS, pas nécessaire pour Gemini)
+* > ajouter 1965 TCP [adresse IP] 1965 (le seul port nécessaire pour Gemini)
 * Espace abonné Free > Ma Freebox > Configurer mon routeur Freebox > Baux DHCP permanents :
-* ajouter [adresse IP] [adresse MAC].
+* > ajouter [adresse IP] [adresse MAC].
 * Espace abonné Free > Ma Freebox > Demander une adresse IP fixe V4 full-stack
 * Espace abonné Free > Ma Freebox > Personnaliser mon reverse DNS
-* ajouter maupiti.blue
+* > ajouter maupiti.blue
 
 
 ## Configuration du nom de domaine
