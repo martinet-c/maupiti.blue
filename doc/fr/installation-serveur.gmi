@@ -98,7 +98,7 @@ ACL=('/var/www/html/.well-known/acme-challenge')
 ```
 * crontab -e
 ```
-0 3 * * * /home/pi/.getssl/getssl -u maupiti.blue
+50 3 * * * /home/pi/.getssl/getssl -u maupiti.blue
 ```
 
 
@@ -108,6 +108,12 @@ J'ai essayé plusieurs serveurs Gemini :
 => gemini://qwertqwefsday.eu/agate.gmi Agate ; très bien mais sans support des CGI, dont j'ai besoin.
 => https://tildegit.org/solderpunk/molly-brown (The Unsinkable) Molly Brown ; j'ai pas réussi à le compiler :(
 => https://sr.ht/~int80h/gemserv Gemserv ; installé avec succès (et un peu de sueur), validé !
+
+Aide au choix d'un serveur Gemini, selon ma modeste expérience :
+* Simplicité : Agate
+* Support des CGI : Gemserv, Molly Brown
+* Support du multi-domaine : Agate, Gemserv
+* Support du multi-utilisateur : Molly Brown
 
 ### Agate
 
