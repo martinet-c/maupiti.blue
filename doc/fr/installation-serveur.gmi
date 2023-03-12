@@ -179,6 +179,7 @@ cgipath = "/home/pi/gemini/maupiti.blue/cgi/"
 => http://charlock.free.fr/gemini/gemserv-v0.6.6-linux-aarch64.tar.gz
 
 
-## Lien divers
+## Liens divers
 
 => https://pimylifeup.com/raspberry-pi-remote-desktop/ Installing the Remote Desktop Server on the Raspberry Pi (pour usage futur)
+=> https://tildegit.org/explore/repos?sort=recentupdate&q=gemini
