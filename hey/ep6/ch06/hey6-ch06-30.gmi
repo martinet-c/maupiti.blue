@@ -1,7 +1,6 @@
 => ../ch07/hey6-ch07-01.gmi next chapter
 
 ```
-
 ﻿    .   .-.         *               bb  *          A
        ( (     .       *           .        *     'X'
   *     '-'                 .             .        X
