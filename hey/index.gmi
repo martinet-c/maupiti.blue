@@ -7,7 +7,7 @@
 => ep3/hey3-01.gmi ep3: hey???
 => ep4/hey4-01.gmi ep4: heu...
 => ep5/hey5-01.gmi ep5: heeeeeeeeeey
-=> ep6/cut-01/hey6-01-01.gmi ep6: I have a hey! COMING SOON
+=> ep6/ch01/hey6-ch01-01.gmi ep6: I have a hey! COMING SOON
 
 ```
 ﻿                       --
@@ -15,4 +15,4 @@
                        dd
 ███████████████████████████████
 ```
-=> /index.gmi back to home page
+=> / << back to home page
