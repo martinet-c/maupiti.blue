@@ -1,0 +1,25 @@
+# Web VS Geminispace
+
+Protocoles
+* Web : HTTP (80), HTTPS (443)
+* Geminispace : Gemini (1965)
+
+Verbes
+* Web : GET, HEAD, POST, etc.
+* Geminispace : NA
+
+Langages de balisage
+* Web : HTML (.html ou .htm)
+* Geminispace : Gemtext (.gemini ou .gmi)
+
+Langages côté serveur
+* Web : *
+* Geminispace : *
+
+Langages côté client
+* Web : JavaScript, CSS
+* Geminispace : NA
+
+=> http://tec-tec/ Le site Tec-Tec est-il transposable à l'identique en Gemini ?
+
+=> gemtext.gmi >> la suite

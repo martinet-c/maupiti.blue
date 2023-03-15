@@ -1,0 +1,11 @@
+```
+(°<  TEC-TEC !  <°)              <°)
+/_)  GEMINI !   (_\              (_\
+```
+
+=> osi.gmi C'est quoi Gemini ?
+=> pourquoi.gmi Pourquoi Gemini ?
+=> gemnini.gmi Oui mais pourquoi "Gemini" ?
+=> web_vs_geminispace.gmi Web VS Geminispace
+=> gemtext.gmi Exemple en Gemtext
+=> conclusion.gmi OK donc au final pourquoi faire du Gemini ??

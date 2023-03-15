@@ -1,0 +1,30 @@
+# Oui mais pourquoi "Gemini" ?
+```
+    A     TITAN II GLV
+    ∏     (Gemini Launch Vehicle)
+   / \    
+  /===\   M 1 p v e
+  │¯¯¯│   E 9 r o n
+  │▒▒▒│   R 5 e l
+  │▒▒▒│   C 8 m   1
+  │▒▒▒│   U - i h 9
+  │█U█│   R 6 e a 6
+  │█N█│   Y 3 r b 1
+  ]║I║[   
+  │▒T▒│   G 1 p v e
+  │▒E▒│   E 9 r o n
+  │▒D▒│   M 6 e l
+  │▒S▒│   I 1 m   1
+  │▒T▒│   N - i h 9
+  │=A=│   I 6 e a 6
+  │ T │     6 r b 5
+  │ E │   
+  │=S=│   A 1 p v e
+  │███│   P 9 r o n
+  │ █ │   O 6 e l
+  │_█_│   L 1 m   1
+  \___/   L - i h 9
+   ▒ ▒    O 7 e a 6
+  /_V_\     2 r b 8
+```
+=> web_vs_geminispace.gmi >> la suite

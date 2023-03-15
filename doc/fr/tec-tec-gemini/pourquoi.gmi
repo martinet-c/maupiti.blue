@@ -1,0 +1,9 @@
+# Pourquoi Gemini ?
+
+=> https://gemini.circumlunar.space/docs/faq.gmi
+
+> * Opposé au pistage omniprésent des utilisateurs sur le Web
+> * Fatigué des pop-ups intempestifs, des publicités odieuses, des vidéos en lecture automatique et autres défauts du Web moderne
+> * Intéressé par l'informatique basse consommation et/ou les réseaux bas débit, par choix ou par nécessité
+
+=> gemini.gmi >> la suite

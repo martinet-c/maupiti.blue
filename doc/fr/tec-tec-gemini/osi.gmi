@@ -1,0 +1,24 @@
+# C'est quoi Gemini ?
+
+* C'est un protocole
+* > créé en 2019 par un gars, soutenu par une communauté informelle
+* C'est de l'Internet mais pas du Web
+
+```
+╔══════════════════╗
+║ 7 - Application  ║ HTTP, HTTPS, Gemini
+╠══════════════════╣
+║ 6 - Présentation ║
+╠══════════════════╣
+║ 5 - Session      ║ TLS
+╠══════════════════╣
+║ 4 - Transport    ║ TCP
+╠══════════════════╣
+║ 3 - Réseau       ║ IPv4, IPv6
+╠══════════════════╣
+║ 2 - Liaison      ║ Ethernet, WiFi, MAC
+╠══════════════════╣
+║ 1 - Physique     ║ Câble, fibre optique
+╚══════════════════╝
+```
+=> pourquoi.gmi >> la suite
