@@ -28,6 +28,7 @@ Main content:
 
 Documentation:
 => doc/fr/installation-serveur.gmi (French) Documentation d'installation du serveur
+=> doc/fr/tec-tec-gemini/ (French) Présentation Tec-Tec Gemini
 
 This Gemini capsule is steered by charlock
 Email: @free.fr

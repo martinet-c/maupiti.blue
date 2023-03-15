@@ -1,22 +1,22 @@
 # Web VS Geminispace
 
-Protocoles
+Protocoles :
 * Web : HTTP (80), HTTPS (443)
 * Geminispace : Gemini (1965)
 
-Verbes
+Verbes :
 * Web : GET, HEAD, POST, etc.
 * Geminispace : NA
 
-Langages de balisage
+Langages de balisage :
 * Web : HTML (.html ou .htm)
 * Geminispace : Gemtext (.gemini ou .gmi)
 
-Langages côté serveur
+Langages côté serveur :
 * Web : *
 * Geminispace : *
 
-Langages côté client
+Langages côté client :
 * Web : JavaScript, CSS
 * Geminispace : NA
 
