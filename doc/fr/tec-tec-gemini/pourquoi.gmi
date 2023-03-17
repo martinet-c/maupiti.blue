@@ -5,5 +5,7 @@
 > * Opposé au pistage omniprésent des utilisateurs sur le Web
 > * Fatigué des pop-ups intempestifs, des publicités odieuses, des vidéos en lecture automatique et autres défauts du Web moderne
 > * Intéressé par l'informatique basse consommation et/ou les réseaux bas débit, par choix ou par nécessité
+...
+> Les navigateurs Web modernes sont si compliqués qu'ils ne peuvent être développés que dans le cadre de projets très importants et coûteux
 
 => gemini.gmi >> la suite
