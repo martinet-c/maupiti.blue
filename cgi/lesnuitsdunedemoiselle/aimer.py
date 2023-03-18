@@ -19,5 +19,5 @@ print(json.dumps(parse_qs(environ["QUERY_STRING"])))
 #jparams = jparams[0:len(jparams)-2] + "}"
 #print(jparams)
 import requests
-resp = requests.post("http://lesnuitsdunedemoiselle.free.fr/api/vote.php", json = parse_qs(environ["QUERY_STRING"]))
+resp = requests.post("http://lesnuitsdunedemoiselle.free.fr/api/vote.php", json = json.dumps(parse_qs(environ["QUERY_STRING"])))
 print(resp.text)
