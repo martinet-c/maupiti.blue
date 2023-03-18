@@ -10,7 +10,7 @@ if "QUERY_STRING" not in environ:
 params = unquote(environ["QUERY_STRING"]).split("&")
 json = "{"
 for sparam in params:
-    param = sparam.split("&")
+    param = sparam.split("=")
     json += '"' + param[0] + '":"' + param[1] + '", '
 json = json[0, len(json)] + "}"
 print(json)
