@@ -12,5 +12,5 @@ json = "{"
 for sparam in params:
     param = sparam.split("=")
     json += '"' + param[0] + '":"' + param[1] + '", '
-#json = json[0, len(json)] + "}"
+json = json[0:len(json)] + "}"
 print(json)
