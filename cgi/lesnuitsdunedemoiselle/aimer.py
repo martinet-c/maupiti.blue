@@ -12,3 +12,4 @@ data["userip"] = environ["REMOTE_ADDR"]
 import requests
 resp = requests.post("http://lesnuitsdunedemoiselle.free.fr/api/vote.php", data = data)
 print(resp.text)
+print(resp.status_code)
