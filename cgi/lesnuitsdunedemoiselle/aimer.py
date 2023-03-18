@@ -11,5 +11,12 @@ data = parse_qs(environ["QUERY_STRING"])
 data["userip"] = environ["REMOTE_ADDR"]
 import requests
 resp = requests.post("http://lesnuitsdunedemoiselle.free.fr/api/vote.php", data = data)
-print(resp.text)
-print(resp.status_code)
+if resp.status_code == 200:
+    print("Votre \"j'aime\" a bien été enregistré !")
+else:
+    print("Votre \"j'aime\" n'a malheureusement pas été enregistré :( il y a eu une problème :")
+    print(resp.text)
+
+print("## Vos favoris :")
+resp = requests.get("http://lesnuitsdunedemoiselle.free.fr/api/favoris.php")
+util.print_nights(resp)
