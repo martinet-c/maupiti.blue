@@ -8,9 +8,11 @@ if "QUERY_STRING" not in environ:
     print("Mauvais paramètres :(")
     exit()
 params = unquote(environ["QUERY_STRING"]).split("&")
-json = "{"
+jparams = "{"
 for sparam in params:
     param = sparam.split("=")
-    json += '"' + param[0] + '":"' + param[1] + '", '
-json = json[0:len(json)] + "}"
-print(json)
+    jparams += '"' + param[0] + '":"' + param[1] + '", '
+jparams = jparams[0:len(jparams)-2] + "}"
+print(jparams)
+import requests
+resp = requests.post("http://lesnuitsdunedemoiselle.free.fr/api/vote.php", json = jparams)
