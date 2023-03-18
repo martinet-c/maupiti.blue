@@ -4,6 +4,7 @@ util.header()
 from urllib.parse import unquote
 from os import environ
 print(environ["REMOTE_ADDR"])
+print(environ)
 from sys import exit
 if "QUERY_STRING" not in environ:
     print("Mauvais paramètres :(")
