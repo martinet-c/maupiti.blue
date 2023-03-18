@@ -6,5 +6,8 @@ from os import environ
 from sys import exit
 if "QUERY_STRING" not in environ:
     print("Mauvais paramètres :(")
-params = unquote(environ["QUERY_STRING"])
-print(params)
+    exit()
+params = unquote(environ["QUERY_STRING"]).split('&')
+for sparam in params:
+    print(sparam)
+    

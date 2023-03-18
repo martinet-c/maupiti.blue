@@ -18,7 +18,7 @@ for sline in lines:
             hash = line[5]
     line = "Je me fais " + sentence
     if hash is not None:
-        line = "=>aimer.py?id_verb=" + id_verb + "&id_noun=" + id_noun + "&hash=" + hash + " " + line + " >> cliquez pour aimer"
+        line = "=>aimer.py?verb=" + id_verb + "&noun=" + id_noun + "&hash=" + hash + " " + line + " >> cliquez pour aimer"
     if cpt%4==0:
         print('')
     print(line)
