@@ -1,14 +1,9 @@
 #!/usr/bin/python3
 import util
 util.header()
-
-import socket
-hostname = socket.gethostname()
-ip_address = socket.gethostbyname(hostname)
-print('IP Address:{}'.format(ip_address))
-
 from urllib.parse import unquote
 from os import environ
+print(environ["REMOTE_ADDR"])
 from sys import exit
 if "QUERY_STRING" not in environ:
     print("Mauvais paramètres :(")
