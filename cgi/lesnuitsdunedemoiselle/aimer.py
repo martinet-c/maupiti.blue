@@ -18,6 +18,6 @@ print(json.dumps(parse_qs(environ["QUERY_STRING"])))
 #    jparams += '"' + param[0] + '":"' + param[1] + '", '
 #jparams = jparams[0:len(jparams)-2] + "}"
 #print(jparams)
-#import requests
-#resp = requests.post("http://lesnuitsdunedemoiselle.free.fr/api/vote.php", json = jparams)
-#print(resp.text)
+import requests
+resp = requests.post("http://lesnuitsdunedemoiselle.free.fr/api/vote.php", json = parse_qs(environ["QUERY_STRING"]))
+print(resp.text)
