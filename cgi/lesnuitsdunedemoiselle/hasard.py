@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import util
 util.header()
+print("Vous aimez une des propositions ci-dessous ? cliquez dessus pour l'aimer et l'ajouter à vos favoris !")
 import requests
 resp = requests.get('http://lesnuitsdunedemoiselle.free.fr/api/hasard.php')
 lines = (resp.text).splitlines()
@@ -16,6 +17,8 @@ for sline in lines:
             id_noun = line[4]
             hash = line[5]
     line = "Je me fais " + sentence
+    if hash is not None:
+        line = "=>vote.py?id_verb=" + id_verb + "&id_noun=" + id_noun + "&hash=" + hash + " " + line + " (cliquez pour aimer !)"
     if cpt%4==0:
         print('')
     print(line)
