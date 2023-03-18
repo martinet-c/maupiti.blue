@@ -10,4 +10,4 @@ Maintenant, qu'est ce que ça donnerait si l'on esssayait de générer des parol
 
 C'est ce que vous allez découvrir ici :)
 
-=> hasard.py 28 nuits au hasard
+=> cgi/lesnuitsdunedemoiselle/hasard.py 28 nuits au hasard
