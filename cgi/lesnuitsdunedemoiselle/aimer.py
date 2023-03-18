@@ -16,3 +16,4 @@ jparams = jparams[0:len(jparams)-2] + "}"
 print(jparams)
 import requests
 resp = requests.post("http://lesnuitsdunedemoiselle.free.fr/api/vote.php", json = jparams)
+print(resp.text)
