@@ -9,7 +9,7 @@ if "QUERY_STRING" not in environ:
     exit()
 import json
 from urllib.parse import parse_qs
-json.dumps(parse_qs(environ["QUERY_STRING"]))
+print(json.dumps(parse_qs(environ["QUERY_STRING"])))
 
 #params = unquote(environ["QUERY_STRING"]).split("&")
 #jparams = "{"
