@@ -6,7 +6,7 @@ def header(current_page="", alternate_title=""):
         if page != current_page:
             print("=> " + page + ".py " + pages[page])
     if current_page:
-        print("## " + alternate_title if alternate_title else pages[page])
+        print("## " + (alternate_title if alternate_title else pages[current_page]))
     print("")
 
 def print_nights(resp_text, line_break=False):
