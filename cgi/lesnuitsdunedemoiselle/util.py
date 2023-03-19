@@ -57,8 +57,7 @@ def footer(current_page, nb_nights_in_current_page):
     print("")
     data = parse_qs(environ["QUERY_STRING"]) if "QUERY_STRING" in environ else {}
     page = int(data["page"]) if "page" in data else 1
-    url = base_api_url + current_page + ".php?userip=" + environ["REMOTE_ADDR"] + "&nav="
     if page>1:
-        print("=> " + url + (page-1) + " page précédente") 
+        print("=> " + current_page + ".py?page=" + (page-1) + " page précédente") 
     if nb_nights_in_current_page == nb_nights_per_page:
-        print("=> " + url + (page+1) + " page suivante") 
+        print("=> " + current_page + ".py?page=" + (page+1) + " page suivante") 
