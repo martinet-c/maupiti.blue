@@ -61,3 +61,6 @@ def footer(current_page, nb_nights_in_current_page):
         print("=> " + current_page + ".py?page=" + (page-1) + " page précédente") 
     if nb_nights_in_current_page == nb_nights_per_page:
         print("=> " + current_page + ".py?page=" + (page+1) + " page suivante") 
+
+def footer2(current_page, nb_nights_in_current_page):
+    print("")
