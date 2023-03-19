@@ -6,4 +6,4 @@ print("Vous aimez une des propositions ci-dessous ? cliquez-la pour l'aimer et l
 from urllib.parse import parse_qs
 from os import environ
 data = parse_qs(environ["QUERY_STRING"])
-util.print_nights(page, data, True)
+#util.print_nights(page, data, True)
