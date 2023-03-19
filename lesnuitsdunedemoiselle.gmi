@@ -4,7 +4,7 @@ Vous connaissez la chanson "Les nuits d'une demoiselle" ?
 Sinon, commencez par y jeter une oreille :
 => https://www.youtube.com/watch?v=mW1JxFb_7aM Colette Renard - Les nuits d'une demoiselle
 
-Maintenant, qu'est ce que ça donnerait si l'on esssayait de générer des paroles sur le même modèle, mais avec des mots choisis au hasard dans le dictionnaire ?
+Qu'est ce que ça donnerait si l'on esssayait de générer des paroles sur le même modèle, mais avec des mots choisis au hasard dans le dictionnaire ?
 
 C'est ce que vous allez découvrir ici :)
 
