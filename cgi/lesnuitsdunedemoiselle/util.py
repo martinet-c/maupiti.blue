@@ -23,7 +23,7 @@ def header(current_page="", alternate_title=""):
 
 def print_nights(current_page, line_break=False):
     data = parse_qs(environ["QUERY_STRING"])
-    url = base_api_url + current_page + ".php?userip=" + environ["REMOTE_ADDR"] + ("&nav=" + data["page"] if "page" in data else "")
+    url = base_api_url + current_page + ".php?userip=" + environ["REMOTE_ADDR"] #+ ("&nav=" + data["page"] if "page" in data else "")
     resp = requests.get(url)
     lines = resp.text.splitlines()
     cpt = 0
