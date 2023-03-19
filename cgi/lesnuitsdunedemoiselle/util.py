@@ -22,6 +22,7 @@ def header(current_page="", alternate_title=""):
     print("")
 
 def print_nights(current_page, line_break=False):
+    from urllib.parse import parse_qs
     data = parse_qs(environ["QUERY_STRING"])
     return 0
 
