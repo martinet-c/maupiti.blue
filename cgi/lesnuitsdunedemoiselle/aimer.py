@@ -25,6 +25,5 @@ if data["hash"]:
 else:
     print("Vous aviez déjà aimé cette proposition !")
 
-print("## Vos favoris :")
-resp = requests.get("http://lesnuitsdunedemoiselle.free.fr/api/favoris.php?userip=" + environ["REMOTE_ADDR"])
-util.print_nights(resp.text)
+print("## Vos favoris les plus récents :")
+util.print_nights("favoris")

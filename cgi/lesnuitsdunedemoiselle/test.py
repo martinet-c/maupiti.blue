@@ -13,5 +13,7 @@ lutiner la galathée
 lever la marmotte
 arquebuser la poudrière
 """
-import util
-util.print_nights(s2)
+#import util
+#util.print_nights(s2)
+
+print(int(""))
