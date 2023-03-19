@@ -1,5 +1,13 @@
-def header():
+def header(current_page=""):
     print("20 text/gemini", end="\r\n")
+    print("# Les nuits d'une demoiselle ~ générateur de poésie aléatoire")
+    pages = {"hasard":"28 nuits au hasard", "favoris":"vos meilleures nuits", "tendances":"les meilleures nuits du moment", "palmares":"depuis la nuit des temps"}
+    for page in pages:
+        if page == current_page:
+            print("## " + page)
+        else:
+            print("=> " + page + ".py " + pages[page])
+    print("")
 
 def print_nights(resp_text, line_break=False):
     lines = resp_text.splitlines()

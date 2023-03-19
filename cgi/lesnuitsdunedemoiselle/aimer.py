@@ -14,15 +14,14 @@ resp = requests.post("http://lesnuitsdunedemoiselle.free.fr/api/vote.php", data 
 
 if resp.text:
     print("Votre \"j'aime\" n'a malheureusement pas été enregistré :(")
-    print("Il y a eu une problème :")
+    print("Il y a eu un problème :")
     print("```")
     print(resp.text)
     print("```")
-    print("Si vous pensez que cette erreur n'est pas normale,")
-    print("=> /contact.gmi n'hésitez pas à me contacter")
+    print("=> /contact.gmi Si vous pensez que cette erreur n'est pas normale, n'hésitez pas à me contacter")
 else:
     print("Votre \"j'aime\" a bien été enregistré !")
 
 print("## Vos favoris :")
-resp = requests.get("http://lesnuitsdunedemoiselle.free.fr/api/favoris.php")
+resp = requests.get("http://lesnuitsdunedemoiselle.free.fr/api/favoris.php?userip=" + environ["REMOTE_ADDR"])
 util.print_nights(resp.text)
