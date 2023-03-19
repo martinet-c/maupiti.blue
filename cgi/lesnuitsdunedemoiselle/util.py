@@ -3,7 +3,6 @@ nb_nights_per_page = 20
 
 import requests
 from os import environ
-from urllib.parse import parse_qs
 
 def header(current_page="", alternate_title=""):
     print("20 text/gemini", end="\r\n")
@@ -21,13 +20,10 @@ def header(current_page="", alternate_title=""):
         print("## " + (alternate_title if alternate_title else pages[current_page]) + " :")
     print("")
 
-def print_nights(current_page, line_break=False):
-    from urllib.parse import parse_qs
-    data = parse_qs(environ["QUERY_STRING"])
+def print_nights(current_page, data, line_break=False):
     return 0
 
-def print_nightss(current_page, line_break=False):
-    data = parse_qs(environ["QUERY_STRING"])
+def print_nightss(current_page, data, line_break=False):
     url = base_api_url + current_page + ".php?userip=" + environ["REMOTE_ADDR"] + ("&nav=" + data["page"] if "page" in data else "")
     resp = requests.get(url)
     lines = resp.text.splitlines()
@@ -56,9 +52,8 @@ def print_nightss(current_page, line_break=False):
         cpt+=1
     return cpt
 
-def footer(current_page, nb_nights_in_current_page):
+def footer(current_page, data, nb_nights_in_current_page):
     print("")
-    data = parse_qs(environ["QUERY_STRING"])
     page = int(data["page"]) if "page" in data else 1
     url = base_api_url + current_page + ".php?userip=" + environ["REMOTE_ADDR"] + "&nav="
     if page>1:
