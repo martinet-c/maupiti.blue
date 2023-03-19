@@ -1,5 +1,5 @@
-base_api_url = "http://lesnuitsdunedemoiselle.free.fr/api/"
-nb_nights_per_page = 20
+#base_api_url = "http://lesnuitsdunedemoiselle.free.fr/api/"
+#nb_nights_per_page = 20
 
 def header(current_page="", alternate_title=""):
     print("20 text/gemini", end="\r\n")
