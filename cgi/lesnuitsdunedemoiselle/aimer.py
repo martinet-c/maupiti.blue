@@ -25,4 +25,4 @@ else:
 
 print("## Vos favoris :")
 resp = requests.get("http://lesnuitsdunedemoiselle.free.fr/api/favoris.php")
-util.print_nights(resp)
+util.print_nights(resp.text)
