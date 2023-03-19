@@ -24,5 +24,5 @@ else:
     print("Votre \"j'aime\" a bien été enregistré !")
 
 print("## Vos favoris :")
-#resp = requests.get("http://lesnuitsdunedemoiselle.free.fr/api/favoris.php")
-#util.print_nights(resp)
+resp = requests.get("http://lesnuitsdunedemoiselle.free.fr/api/favoris.php")
+util.print_nights(resp)
