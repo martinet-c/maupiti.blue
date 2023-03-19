@@ -1,12 +1,17 @@
 def header(current_page="", alternate_title=""):
     print("20 text/gemini", end="\r\n")
     print("# Les nuits d'une demoiselle ~ générateur de poésie aléatoire")
-    pages = {"hasard":"28 nuits au hasard", "favoris":"vos meilleures nuits", "tendances":"les meilleures nuits du moment", "palmares":"depuis la nuit des temps"}
+    pages = {
+        "hasard":"28 nuits au hasard",
+        "favoris":"Vos meilleures nuits",
+        "tendances":"Les meilleures nuits du moment",
+        "palmares":"Les meilleures depuis la nuit des temps"
+    }
     for page in pages:
         if page != current_page:
             print("=> " + page + ".py " + pages[page])
     if current_page:
-        print("## " + (alternate_title if alternate_title else pages[current_page]))
+        print("## " + (alternate_title if alternate_title else pages[current_page]) + " :")
     print("")
 
 def print_nights(resp_text, line_break=False):
@@ -35,3 +40,8 @@ def print_nights(resp_text, line_break=False):
         print(line)
         cpt+=1
     return cpt
+
+def footer(current_page, nb_nights_in_current_page):
+    nb_nights_per_page = 20
+    from os import environ
+    print("")
