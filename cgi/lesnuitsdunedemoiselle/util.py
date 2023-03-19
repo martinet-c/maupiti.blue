@@ -1,12 +1,12 @@
-def header(current_page=""):
+def header(current_page="", alternate_title=""):
     print("20 text/gemini", end="\r\n")
     print("# Les nuits d'une demoiselle ~ générateur de poésie aléatoire")
     pages = {"hasard":"28 nuits au hasard", "favoris":"vos meilleures nuits", "tendances":"les meilleures nuits du moment", "palmares":"depuis la nuit des temps"}
     for page in pages:
-        if page == current_page:
-            print("## " + page)
-        else:
+        if page != current_page:
             print("=> " + page + ".py " + pages[page])
+    if current_page:
+        print("## " + alternate_title if alternate_title else pages[page])
     print("")
 
 def print_nights(resp_text, line_break=False):
@@ -25,10 +25,13 @@ def print_nights(resp_text, line_break=False):
                 hash = line[5]
         line = "Je me fais " + sentence
         if nb_votes:
-            line += " (" + nb_votes + " j'aime" + (last_vote if ", le dernier il y a " + last_vote else "")  + ")"
+            line += " (" + nb_votes + " j'aime" + (", le dernier il y a " + last_vote if last_vote else "")  + ")"
         if hash:
             line = "=>aimer.py?verb=" + id_verb + "&noun=" + id_noun + "&hash=" + hash + " " + line + " >> cliquez pour aimer"
+        else:
+            line = "=>aimer.py " + line + " (déjà dans vos favoris)"
         if line_break and cpt%4==0:
             print("")
         print(line)
         cpt+=1
+    return cpt
