@@ -12,8 +12,11 @@ data["userip"] = environ["REMOTE_ADDR"]
 import requests
 resp = requests.post("http://lesnuitsdunedemoiselle.free.fr/api/vote.php", data = data)
 if resp.text:
-    print("Votre \"j'aime\" n'a malheureusement pas été enregistré :( il y a eu une problème :")
+    print("Votre \"j'aime\" n'a malheureusement pas été enregistré :(")
+    print("Il y a eu une problème :")
+    print("```")
     print(resp.text)
+    print("```")
 else:
     print("Votre \"j'aime\" a bien été enregistré !")
 
