@@ -17,8 +17,8 @@ def print_nights(resp, line_break=False):
         line = "Je me fais " + sentence
         #if nb_votes:
             #line += " (" + nb_votes + " j'aime" + (last_vote if ", le dernier il y a " + last_vote else "")  + ")"
-        #if hash:
-            #line = "=>aimer.py?verb=" + id_verb + "&noun=" + id_noun + "&hash=" + hash + " " + line + " >> cliquez pour aimer"
+        if hash:
+            line = "=>aimer.py?verb=" + id_verb + "&noun=" + id_noun + "&hash=" + hash + " " + line + " >> cliquez pour aimer"
         if line_break and cpt%4==0:
             print("")
         print(line)
