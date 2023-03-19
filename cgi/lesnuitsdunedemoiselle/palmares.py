@@ -3,4 +3,4 @@ page = "palmares"
 import util
 util.header(page)
 cpt = util.print_nights(page)
-util.footer2(page, cpt)
+util.footer(page, cpt)
