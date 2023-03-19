@@ -8,6 +8,6 @@ Léonard de Vinci
 * Stabilité & pérennité
 * Nouvelle frontière
 
-## See you in the Geminispace cowboy...
+## See you in Geminispace cowboy...
 
 => index.gmi >> retour au menu
