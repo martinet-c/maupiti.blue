@@ -21,7 +21,7 @@ def header(current_page="", alternate_title=""):
         print("## " + (alternate_title if alternate_title else pages[current_page]) + " :")
     print("")
 
-def print_nights(current_page, line_break=False):
+def print_nights(current_page, simple_list=False, line_break=False):
     data = parse_qs(environ["QUERY_STRING"]) if "QUERY_STRING" in environ else {}
     url = base_api_url + current_page + ".php?userip=" + environ["REMOTE_ADDR"] + ("&nav=" + data["page"] if "page" in data else "")
     resp = requests.get(url)
@@ -41,7 +41,9 @@ def print_nights(current_page, line_break=False):
         line = "Je me fais " + sentence
         if nb_votes:
             line += " (" + nb_votes + " j'aime" + (", le dernier il y a " + last_vote if last_vote else "")  + ")"
-        if hash:
+        if simple_list:
+            line = "* " + line
+        elif hash:
             line = "=>aimer.py?verb=" + id_verb + "&noun=" + id_noun + "&hash=" + hash + " " + line + " >> cliquez pour aimer"
         else:
             line = "=>aimer.py " + line + " (déjà dans vos favoris)"

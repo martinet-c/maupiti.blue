@@ -2,12 +2,8 @@
 import util
 util.header()
 from os import environ
-from sys import exit
-if "QUERY_STRING" not in environ:
-    print("Mauvais paramètres :(")
-    exit()
 from urllib.parse import parse_qs
-data = parse_qs(environ["QUERY_STRING"])
+data = parse_qs(environ["QUERY_STRING"]) if "QUERY_STRING" in environ else {}
 data["userip"] = environ["REMOTE_ADDR"]
 
 if data["hash"]:
@@ -26,4 +22,4 @@ else:
     print("Vous aviez déjà aimé cette proposition !")
 
 print("## Vos favoris les plus récents :")
-util.print_nights("favoris")
+util.print_nights("favoris", True)
