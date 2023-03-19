@@ -16,6 +16,3 @@ def header(current_page="", alternate_title=""):
     if current_page:
         print("## " + (alternate_title if alternate_title else pages[current_page]) + " :")
     print("")
-
-def print_nights(current_page, data, line_break=False):
-    return 0
