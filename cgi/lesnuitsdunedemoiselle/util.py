@@ -23,7 +23,7 @@ def header(current_page="", alternate_title=""):
 
 def print_nights(current_page, line_break=False):
     data = parse_qs(environ["QUERY_STRING"])
-    url = base_api_url + current_page + ".php?userip=" + environ["REMOTE_ADDR"] + ("&nav=" + data["page"] if data["page"] else "")
+    url = base_api_url + current_page + ".php?userip=" + environ["REMOTE_ADDR"] + ("&nav=" + data["page"] if "page" in data else "")
     resp = requests.get(url)
     lines = resp.text.splitlines()
     cpt = 0
@@ -54,7 +54,7 @@ def print_nights(current_page, line_break=False):
 def footer(current_page, nb_nights_in_current_page):
     print("")
     data = parse_qs(environ["QUERY_STRING"])
-    page = int(data["page"]) if data["page"] else 1
+    page = int(data["page"]) if "page" in data else 1
     url = base_api_url + current_page + ".php?userip=" + environ["REMOTE_ADDR"] + "&nav="
     if page>1:
         print("=> " + url + (page-1) + " page précédente") 

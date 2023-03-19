@@ -1,9 +1,7 @@
-# Les nuits d'une demoiselle
-
-## ~ générateur de poésie aléatoire
+# Les nuits d'une demoiselle ~ générateur de poésie aléatoire
 
 Vous connaissez la chanson "Les nuits d'une demoiselle" ?
-Si ce n'est pas le cas, commencez par y jeter une oreille :
+Sinon, commencez par y jeter une oreille :
 => https://www.youtube.com/watch?v=mW1JxFb_7aM Colette Renard - Les nuits d'une demoiselle
 
 Maintenant, qu'est ce que ça donnerait si l'on esssayait de générer des paroles sur le même modèle, mais avec des mots choisis au hasard dans le dictionnaire ?
