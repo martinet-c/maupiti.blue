@@ -22,5 +22,5 @@ else:
     print("Vous aviez déjà aimé cette proposition !")
 
 print("## Vos favoris les plus récents :")
-util.print_nights("favoris", True)
+#util.print_nights("favoris", True)
 util.footer()
