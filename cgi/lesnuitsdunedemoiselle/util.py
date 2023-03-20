@@ -24,6 +24,7 @@ def header(current_page="", alternate_title=""):
 def print_nights(current_page, simple_list=False, line_break=False):
     data = parse_qs(environ["QUERY_STRING"]) if "QUERY_STRING" in environ else {}
     url = base_api_url + current_page + ".php?userip=" + environ["REMOTE_ADDR"] + ("&nav=" + str(data["page"]) if "page" in data else "")
+    print(url)
     resp = requests.get(url)
     lines = resp.text.splitlines()
     cpt = 0
