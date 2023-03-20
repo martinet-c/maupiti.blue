@@ -23,3 +23,4 @@ else:
 
 print("## Vos favoris les plus récents :")
 util.print_nights("favoris", True)
+util.footer("", 0, False)
