@@ -53,8 +53,8 @@ def print_nights(current_page, simple_list=False, line_break=False):
         cpt+=1
     return cpt
 
-def footer(current_page, nb_nights_in_current_page, display_nav=True):
-    if display_nav:
+def footer(current_page="", nb_nights_in_current_page=0):
+    if current_page and nb_nights_in_current_page:
         print("")
         data = parse_qs(environ["QUERY_STRING"]) if "QUERY_STRING" in environ else {}
         page = int(data["page"]) if "page" in data else 1
