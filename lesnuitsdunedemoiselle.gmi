@@ -1,11 +1,14 @@
 # Les nuits d'une demoiselle ~ générateur de poésie aléatoire
 
 Vous connaissez la chanson "Les nuits d'une demoiselle" ?
+
 Sinon, commencez par y jeter une oreille :
 => https://www.youtube.com/watch?v=mW1JxFb_7aM Colette Renard - Les nuits d'une demoiselle
 
-Qu'est ce que ça donnerait si l'on esssayait de générer des paroles sur le même modèle, mais avec des mots choisis au hasard dans le dictionnaire ?
-
-C'est ce que vous allez découvrir ici :)
+Et si l'on esssayait de générer des paroles sur le même modèle, mais avec des mots pris au hasard dans le dictionnaire ?
 
 => cgi/lesnuitsdunedemoiselle/hasard.py 28 nuits au hasard
+
+NB :
+Mon serveur Gemini n'est pas très patient, si une page met plus de 5s à répondre il la fait tomber en erreur.
+Si jamais ça arrive n'hésitez pas à réessayer !
