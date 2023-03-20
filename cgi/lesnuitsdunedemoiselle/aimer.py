@@ -10,16 +10,16 @@ if "hash" in data:
     import requests
     resp = requests.post(util.base_api_url + "vote.php", data = data)
     if resp.text:
-        print("## Votre \"j'aime\" n'a hélas pas été enregistré :(")
+        print("## > Votre \"j'aime\" n'a hélas pas été enregistré :(")
         print("Il y a eu un problème :")
         print("```")
         print(resp.text)
         print("```")
         print("=> /contact.gmi Si vous pensez que cette erreur n'est pas normale, n'hésitez pas à me contacter")
     else:
-        print("## Votre \"j'aime\" a bien été enregistré !")
+        print("## > Votre \"j'aime\" a bien été enregistré !")
 else:
-    print("## Vous aviez déjà aimé cette proposition !")
+    print("## > Vous aviez déjà aimé cette proposition !")
 
 print("## Vos favoris les plus récents :")
 util.print_nights("favoris", True)
