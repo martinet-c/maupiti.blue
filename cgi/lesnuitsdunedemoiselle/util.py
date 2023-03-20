@@ -57,7 +57,7 @@ def footer(current_page="", nb_nights_in_current_page=0):
     if current_page and nb_nights_in_current_page:
         print("")
         data = parse_qs(environ["QUERY_STRING"]) if "QUERY_STRING" in environ else {}
-        page = int(data["page"]) if "page" in data else 1
+        page = int(data["page"][0]) if "page" in data else 1
         if page>1:
             print("=> " + current_page + ".py?page=" + str(page-1) + " << page précédente") 
         if nb_nights_in_current_page == nb_nights_per_page:

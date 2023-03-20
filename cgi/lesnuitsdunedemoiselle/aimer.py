@@ -6,7 +6,7 @@ from urllib.parse import parse_qs
 data = parse_qs(environ["QUERY_STRING"]) if "QUERY_STRING" in environ else {}
 data["userip"] = environ["REMOTE_ADDR"]
 
-if data["hash"]:
+if "hash" in data:
     import requests
     resp = requests.post(util.base_api_url + "vote.php", data = data)
     if resp.text:
@@ -22,5 +22,5 @@ else:
     print("Vous aviez déjà aimé cette proposition !")
 
 print("## Vos favoris les plus récents :")
-#util.print_nights("favoris", True)
+util.print_nights("favoris", True)
 util.footer()
