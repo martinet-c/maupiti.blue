@@ -11,4 +11,4 @@
 => doc/fr/tec-tec-gemini/ (French) A brief introduction to Gemini intended for an IT audience
 
 * 2023-03-21:
-=> lesnuitsdunedemoiselle.gmi (French) Gemini porting of "Les nuits d'une demoiselle", a website I made two years ago.
+=> lesnuitsdunedemoiselle.gmi (French) Gemini porting of "Les nuits d'une demoiselle", a funny website I made two years ago.
