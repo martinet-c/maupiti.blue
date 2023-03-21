@@ -22,9 +22,12 @@
 ```
 => log.gmi Captain's log
 
-Main content:
+ASCII art:
 => hey/  Hey!
 => cgi/alone.py Alone
+
+Poetry:
+=> lesnuitsdunedemoiselle.gmi (French) Les nuits d'une demoiselle
 
 Documentation:
 => doc/fr/installation-serveur.gmi (French) Documentation d'installation du serveur
