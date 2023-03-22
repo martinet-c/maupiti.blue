@@ -8,6 +8,4 @@ Et si l'on esssayait de générer des paroles sur le même modèle, mais avec de
 Voyons ce que ça donne :
 => cgi/lesnuitsdunedemoiselle/hasard.py 28 nuits au hasard
 
-NB :
-Mon serveur Gemini n'est pas très patient, si une page met plus de 5s à répondre il la fait tomber en erreur.
-Si jamais ça arrive n'hésitez pas à réessayer !
+NB : Mon serveur Gemini n'est pas très patient, si une page met plus de 5s à répondre il la fait tomber en erreur. Si jamais ça arrive n'hésitez pas à réessayer !
