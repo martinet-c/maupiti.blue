@@ -8,6 +8,8 @@ Léonard de Vinci
 * Stabilité & pérennité
 * Nouvelle frontière
 
+=> https://aminet.net/package/comm/net/AmiGemini Un dernier argument
+
 ## See you in Geminispace cowboy...
 
 => index.gmi >> retour au menu
