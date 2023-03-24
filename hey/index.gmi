@@ -15,4 +15,6 @@
                        dd
 ███████████████████████████████
 ```
+NB: If you use Lagrange, or another Gemini client offering vertical centring, you should disable vertical centring for a better experience (in Lagrange: Files > Preferences... > Page Layout > Vertical centring).
+
 => / << back to home page
