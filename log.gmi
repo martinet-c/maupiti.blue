@@ -12,4 +12,4 @@
 
 * 2023-03-21:
 => lesnuitsdunedemoiselle.gmi (French) Gemini porting of "Les nuits d'une demoiselle", a funny website I made two years ago.
-Now that "Hey!" and "Les nuits d'une demoiselle" are published, this is the end of the Gemini portings of my existing Web content. Further content will be real new content. And making new content takes time :) There will likely be no new update for a few weeks.
+Now that "Hey!" and "Les nuits d'une demoiselle" are published, this is the end of the Gemini portings of my existing Web content. Further content will be real new content. And creating new content takes time! There will likely be no new update for a few weeks.
