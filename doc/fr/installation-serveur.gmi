@@ -69,6 +69,8 @@ NB : Il n'est pas nécessaire d'installer un serveur Web pour héberger du conte
 
 ## Obtention d'un certficat
 
+NB : La regénération d'un nouveau certificat peut entrainer certains clients Gemini à considérer la capsule comme "not trusted".
+
 => https://robertopozzi.medium.com/have-fun-with-your-raspberry-pi-secure-your-application-with-self-signed-certificates-c8ef455a492f référence pour la création d'un certificat auto-signé, mais ce type de certificat n'est pas accepté par Gemserv
 => https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=265800 référence du problème Gemserv rencontré avec un certificat auto-signé
 => https://letsencrypt.org/fr/getting-started/ référence pour obtenir un certificat Let's Encrypt
