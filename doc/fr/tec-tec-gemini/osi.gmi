@@ -1,7 +1,7 @@
 # C'est quoi Gemini ?
 
 * C'est un protocole
-* > créé en 2019 par Solderpunk, soutenu par une communauté informelle
+* Créé en 2019 par Solderpunk, soutenu par une communauté informelle
 * C'est de l'Internet mais ce n'est pas du Web
 > You may think of Gemini as "the web, stripped right back to its essence"
 

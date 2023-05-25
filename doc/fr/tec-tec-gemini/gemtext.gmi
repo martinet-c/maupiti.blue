@@ -14,7 +14,7 @@ Une ligne de texte classique.
 * un élément de liste
 * un 2ème élément de liste
 
-=> ../../img/255px-GeminiPatch.png un lien vers un image
+=> ../../img/255px-GeminiPatch.png un lien vers une image
 => gemini://gemini.circumlunar.space un lien Gemini
 => https://gemini.circumlunar.space/ un lien Web
 
@@ -34,7 +34,7 @@ Une ligne de texte classique.
 * un élément de liste
 * un 2ème élément de liste
 
-=> ../../img/255px-GeminiPatch.png un lien vers un image
+=> ../../img/255px-GeminiPatch.png un lien vers une image
 => gemini://gemini.circumlunar.space un lien Gemini
 => https://gemini.circumlunar.space/ un lien Web
 
