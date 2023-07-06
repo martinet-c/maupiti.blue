@@ -7,7 +7,7 @@
 
 ```
 ╔══════════════════╗
-║ 7 - Application  ║ HTTP, HTTPS, Gemini
+║ 7 - Application  ║ HTTP, HTTPS, Gopher, Gemini
 ╠══════════════════╣
 ║ 6 - Présentation ║
 ╠══════════════════╣
