@@ -11,14 +11,14 @@ Code source :
 
 Une ligne de texte classique.
 
+> Une citation
+
 * un élément de liste
 * un 2ème élément de liste
 
 => ../../img/255px-GeminiPatch.png un lien vers une image
 => gemini://gemini.circumlunar.space un lien Gemini
 => https://gemini.circumlunar.space/ un lien Web
-
-> Une citation
 ```
 
 Rendu :
@@ -31,14 +31,14 @@ Rendu :
 
 Une ligne de texte classique.
 
+> Une citation
+
 * un élément de liste
 * un 2ème élément de liste
 
 => ../../img/255px-GeminiPatch.png un lien vers une image
 => gemini://gemini.circumlunar.space un lien Gemini
 => https://gemini.circumlunar.space/ un lien Web
-
-> Une citation
 
 
 => conclusion.gmi >> conclusion
